@@ -4,24 +4,24 @@ import Section from './Section'
 
 function Html() {
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
-      <div className="w-1/4 bg-gray-100 p-4 fixed h-screen overflow-y-auto">
-        <h2 className="text-xl font-bold mb-4">HTML Topics</h2>
-        <ul className="space-y-2">
-          <Topics name="Introduction"/>
-          <Topics name="HTML Structure"/>
-          <Topics name="HTML Elements"/>
-          <Topics name="HTML Attributes"/>
-          <Topics name="Headings"/>
-          <Topics name="Paragraphs"/>
-          <Topics name="Links"/>
-          <Topics name="Images"/>
+      <div className="w-full md:w-1/4 bg-gray-100 p-4 md:fixed md:h-screen md:overflow-y-auto">
+        <h2 className="text-2xl font-bold mb-6 text-blue-600">HTML Topics</h2>
+        <ul className="space-y-3">
+          <Topics name="Introduction" icon="📚" />
+          <Topics name="HTML Structure" icon="🏗️" />
+          <Topics name="HTML Elements" icon="🧱" />
+          <Topics name="HTML Attributes" icon="🏷️" />
+          <Topics name="Headings" icon="📝" />
+          <Topics name="Paragraphs" icon="📄" />
+          <Topics name="Links" icon="🔗" />
+          <Topics name="Images" icon="🖼️" />
         </ul>
       </div>
 
       {/* Main content */}
-      <div className="w-3/4 p-4 ml-[25%] overflow-y-auto">
+      <div className="w-full md:w-3/4 p-4 md:ml-[25%] overflow-y-auto">
         <h1 className="text-3xl font-bold mb-6 font-quicksand text-blue-600">Learn HTML</h1>
 
         <Section id="introduction" topic="Introduction" content="HTML (HyperText Markup Language) is the standard markup language for creating web pages." />

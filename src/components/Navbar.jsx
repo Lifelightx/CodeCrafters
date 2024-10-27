@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const courses = ['HTML', 'Java', 'JavaScript', 'Node Js', 'Mongo Db', 'My SQL', 'React Js', 'Next Js', 'Tailwind Css', 'Bootstrap', 'Sass', 'Git & Github', 'Docker', 'Kubernetes'];
+  const courses = ['HTML', 'Java', 'JavaScript', 'Node Js', 'Mongo Db', 'My SQL', 'React Js', 'Tailwind Css', 'Bootstrap', 'Git & Github'];
 
   const handleLinkClick = (path) => {
     setIsMenuOpen(false);
@@ -17,7 +17,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <span className="text-blue-500 font-quicksand font-bold">Logo</span>
+              <span className="text-blue-500 font-quicksand font-bold">CodeCrafters</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -26,7 +26,7 @@ function Navbar() {
                 <Link 
                   key={index} 
                   to={`/learn/${topic.toLowerCase().replace(' ', '')}`} 
-                  className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium"
                 >
                   {topic}
                 </Link>
