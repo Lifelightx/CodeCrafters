@@ -9,14 +9,14 @@ function Html() {
       <div className="w-full md:w-1/4 bg-gray-100 p-4 md:fixed md:h-screen md:overflow-y-auto">
         <h2 className="text-2xl font-bold mb-6 text-blue-600">HTML Topics</h2>
         <ul className="space-y-3">
-          <Topics name="Introduction" icon={<i className="fa fa-book"></i>} />
-          <Topics name="HTML Structure" icon={<i className="fa fa-sitemap"></i>} />
-          <Topics name="HTML Elements" icon={<i className="fa fa-cubes"></i>} />
-          <Topics name="HTML Attributes" icon={<i className="fa fa-tags"></i>} />
-          <Topics name="Headings" icon={<i className="fa fa-header"></i>} />
-          <Topics name="Paragraphs" icon={<i className="fa fa-paragraph"></i>} />
-          <Topics name="Links" icon={<i className="fa fa-link"></i>} />
-          <Topics name="Images" icon={<i className="fa fa-image"></i>} />
+          <Topics name="Introduction" icon={<i className="fa fa-book text-blue-500"></i>} />
+          <Topics name="HTML Structure" icon={<i className="fa fa-sitemap text-blue-500"></i>} />
+          <Topics name="HTML Elements" icon={<i className="fa fa-cubes text-blue-500"></i>} />
+          <Topics name="HTML Attributes" icon={<i className="fa fa-tags text-blue-500"></i>} />
+          <Topics name="Headings" icon={<i className="fa fa-header text-blue-500"></i>} />
+          <Topics name="Paragraphs" icon={<i className="fa fa-paragraph text-blue-500"></i>} />
+          <Topics name="Links" icon={<i className="fa fa-link text-blue-500"></i>} />
+          <Topics name="Images" icon={<i className="fa fa-image text-blue-500"></i>} />
         </ul>
       </div>
 

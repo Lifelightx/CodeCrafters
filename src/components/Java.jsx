@@ -9,13 +9,13 @@ function Java() {
       <div className="w-full md:w-1/4 bg-gray-100 p-4 md:fixed md:h-screen md:overflow-y-auto">
         <h2 className="text-xl font-bold mb-4">Java Topics</h2>
         <ul className="space-y-0">
-          <Topics name="Introduction" icon={<i className="fas fa-book"></i>} />
-          <Topics name="OOPS" icon={<i className="fas fa-cube"></i>} />
-          <Topics name="Exceptions" icon={<i className="fas fa-exclamation-triangle"></i>} />
-          <Topics name="Collections" icon={<i className="fas fa-layer-group"></i>} />
-          <Topics name="Multithreading" icon={<i className="fas fa-tasks"></i>} />
-          <Topics name="Strings" icon={<i className="fas fa-quote-right"></i>} />
-          <Topics name="DSA" icon={<i className="fas fa-sitemap"></i>} />
+          <Topics name="Introduction" icon={<i className="fas fa-book text-blue-500"></i>} />
+          <Topics name="OOPS" icon={<i className="fas fa-cube text-blue-500"></i>} />
+          <Topics name="Exceptions" icon={<i className="fas fa-exclamation-triangle text-blue-500"></i>} />
+          <Topics name="Collections" icon={<i className="fas fa-layer-group text-blue-500"></i>} />
+          <Topics name="Multithreading" icon={<i className="fas fa-tasks text-blue-500"></i>} />
+          <Topics name="Strings" icon={<i className="fas fa-quote-right text-blue-500"></i>} />
+          <Topics name="DSA" icon={<i className="fas fa-sitemap text-blue-500"></i>} />
         </ul>
       </div>
 
