@@ -1,18 +1,75 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const courses = ['HTML', 'Java', 'JavaScript', 'Node Js', 'Mongo Db', 'My SQL', 'React Js', 'Next Js', 'Tailwind Css', 'Bootstrap', 'Sass', 'Git & Github', 'Docker', 'Kubernetes'];
+
+  const handleLinkClick = (path) => {
+    setIsMenuOpen(false);
+    navigate(path);
+  };
+
   return (
-    <div className='flex p-4 text-blue-500 font-quicksand font-bold justify-center gap-4 align-middle bg-white shadow-md'>
-      <Link to='/learn/html' className='hover:text-orange-500'>HTML</Link>
-      <Link to='/learn/java' className='hover:text-orange-500'>Java</Link>
-      <Link to='/learn/javascript' className='hover:text-orange-500'>JavaScript</Link>
-      <Link to='/learn/node' className='hover:text-orange-500'>Node Js</Link>
-      <Link to='/learn/mongoDb' className='hover:text-orange-500'>Mongo Db</Link>
-      <Link to='/learn/mysql' className='hover:text-orange-500'>My SQL</Link>
-      {/* <Link to='/learn/coding' className='hover:text-orange-500'>Coding </Link> */}
-    </div>
-  )
+    <nav className="bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <span className="text-blue-500 font-quicksand font-bold">Logo</span>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {courses.map((topic, index) => (
+                <Link 
+                  key={index} 
+                  to={`/learn/${topic.toLowerCase().replace(' ', '')}`} 
+                  className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  {topic}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-blue-500 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            >
+              <span className="sr-only">Open main menu</span>
+              {isMenuOpen ? (
+                <span className="block h-6 w-6 text-2xl">×</span>
+              ) : (
+                <span className="block h-6 w-6 text-2xl">☰</span>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {courses.map((topic, index) => (
+              <a
+                key={index}
+                href={`/learn/${topic.toLowerCase().replace(' ', '')}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(`/learn/${topic.toLowerCase().replace(' ', '')}`);
+                }}
+                className="text-blue-500 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium"
+              >
+                {topic}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

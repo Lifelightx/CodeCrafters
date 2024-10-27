@@ -3,35 +3,33 @@ import Topics from './Topics'
 import Section from './Section'
 
 function Java() {
-
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
-      <div className="w-1/4 bg-gray-100 p-4 fixed h-screen overflow-y-auto">
+      <div className="w-full md:w-1/4 bg-gray-100 p-4 md:fixed md:h-screen md:overflow-y-auto">
         <h2 className="text-xl font-bold mb-4">Java Topics</h2>
         <ul className="space-y-0">
           <Topics name="Introduction" />
           <Topics name="OOPS" />
           <Topics name="Exceptions" />
-          <Topics name = "Collections" />
-          <Topics name = "Multithreading" />
-          <Topics name = "Strings" />
+          <Topics name="Collections" />
+          <Topics name="Multithreading" />
+          <Topics name="Strings" />
           <Topics name="DSA" />
-          
         </ul>
       </div>
 
       {/* Main content */}
-      <div className="w-3/4 p-5 ml-[25%] overflow-y-auto">
+      <div className="w-full md:w-3/4 p-5 md:ml-[25%] overflow-y-auto">
         <h1 className="text-3xl font-bold mb-6 font-quicksand text-blue-600">Learn Java</h1>
 
         <Section id="introduction"
           topic="1. What is JAVA?"
-          content="Java is high-level, object-oriented programming language developed by Sun Microsystems in 1995.It's deigened to have minimal implementation dependencies making it platform-independent. It is Owned by Oracle."
+          content="Java is high-level, object-oriented programming language developed by Sun Microsystems in 1995. It's designed to have minimal implementation dependencies making it platform-independent. It is Owned by Oracle."
         />
         <Section id="2"
           topic="2. What is JDK?"
-          content="JDK(JAVA DEVELOPEMENT KIT) is a software developement environment used for developing java applications. It includes the java runtime environment(JRE) and other development tools." />
+          content="JDK(JAVA DEVELOPEMENT KIT) is a software development environment used for developing java applications. It includes the java runtime environment(JRE) and other development tools." />
         <Section id="3"
           topic="3. What is JRE?"
           content="The JRE(Java Runtime Environment) is the runtime portion of java software, which is all we need to run java applications but not develop them."
@@ -59,7 +57,7 @@ function Java() {
           topic="8. What is the main feature of Java language?"
           content="a) Java is platform independent. 
            b) Java is used to develop scalable and secure internet based applications using tools like Servlet, JSP, JDBC.
-           c) Java is used to develop distributed applications using tolls like RMI(Remote Method Invocation).
+           c) Java is used to develop distributed applications using tools like RMI(Remote Method Invocation).
            d) Java is multi-threaded, which means it can execute multiple threads in a program at the same time.
            e) Java is interpreted and compiled both.
            "
@@ -639,8 +637,212 @@ public class AanagramsChecker {
 `}
           language="java"
         />
+        <Section id="76"
+          topic="76. Write a program to find the frequency of each character in a string?"
+          content={""}
+          code={`import java.util.HashMap;
+import java.util.Map;
 
+public class CharacterFrequency {
+    public static void findCharFrequency(String str) {
+        Map<Character, Integer> frequencyMap = new HashMap<>();
+        
+        // Convert string to lowercase to treat 'A' and 'a' as same
+        str = str.toLowerCase();
+        
+        // Count frequency of each character
+        for (char c : str.toCharArray()) {
+            if (Character.isLetterOrDigit(c)) {
+                frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
+            }
+        }
+        
+        // Print the frequency of each character
+        for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
+            System.out.println("'" + entry.getKey() + "' : " + entry.getValue());
+        }
+    }
+    
+    public static void main(String[] args) {
+        String input = "Hello, World!";
+        System.out.println("Input string: " + input);
+        System.out.println("Character frequencies:");
+        findCharFrequency(input);
+    }
+}`}
+          language="java"
+        />
+        <Section id="77"
+          topic="77. Count the number of words in a string?"
+          content={""}
+          code={`public class WordCounter {
+    public static int countWords(String str) {
+        if (str == null || str.isEmpty()) {
+            return 0;
+        }
+        
+        // Split the string by whitespace and count the resulting array length
+        String[] words = str.trim().split("\\s+");
+        return words.length;
+    }
+    
+    public static void main(String[] args) {
+        String input = "This is a sample sentence to count words.";
+        int wordCount = countWords(input);
+        System.out.println("Input string: " + input);
+        System.out.println("Word count: " + wordCount);
+    }
+}`} 
+        language="java"
+        />
+      <Section id="78"
+      topic="78. Write a program to count number of vowels and consonants in a string?"
+      content={""}
+      code={`
+public class CountNoOfVowelsAndConsonants {
+    public static void countNumberOfVowels(String str) {
+        int vowels = 0, consonants = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowels++;
+            }
+            else if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u' && ch != ' ') {
+                consonants++;
+            }
+        }
+        System.out.println("Vowels: "+ vowels);
+        System.out.println("Consonants: "+ consonants);
 
+    }
+    public static void main(String[] args) {
+        countNumberOfVowels("Jeebanjyoti Mallik is a good Boy");
+    }
+}
+`}
+      language="java"
+      />
+      <Section id="79"
+        topic="79. Write a program to determine a string has all unique characters?"
+        content={""}
+        code={`
+import java.util.LinkedHashSet;
+
+public class DetermineStringHasAllUniqueCharacters {
+    public static boolean uniqueCharChecker(String str){
+        LinkedHashSet<Character> lhs = new LinkedHashSet<>();
+        char[] strArr = str.toLowerCase().toCharArray();
+        for( char ch : strArr){
+            if(!lhs.add(ch)){
+                return false;
+            }
+        }
+        return true;
+        
+    }
+    public static void main(String[] args) {
+        String str = "Jebanjyot Mlik";
+        if(uniqueCharChecker(str)){
+            System.out.println("String have all unique character");
+        }
+        else{
+            System.out.println("String does not have all unique character");
+        }
+    }
+}
+`}
+        language="java"
+      />
+      <Section id="80"
+        topic="80. Find the occurence of a character in a string?"
+        content=""
+        code = {`
+public class OccaranceOfACharInString {
+    public static int occaranceOfChar(String str, char ch){
+        int occarance = 0;
+        for(int i=0; i<str.length(); i++){
+            if(str.charAt(i) == ch){
+                occarance++;
+            }
+        }
+        return occarance;
+    }
+    public static void main(String[] args) {
+        String str = "Jeebanjyoti Mallik";
+        char ch = 'e';
+        int ocr = occaranceOfChar(str, ch);
+        System.out.println(ocr);
+
+    }
+}
+`}
+        language="java"
+      />
+      <Section id="81"
+      topic="81. Write a program to find the first non-repeating character in a string?"
+      content={""}
+      code={`public class FirstNonRepeatingChar {
+    public static char findFirstNonRepeatingChar(String str) {
+        // Create a HashMap to store character frequencies
+        Map<Character, Integer> charFrequency = new HashMap<>();
+        
+        // Count the frequency of each character
+        for (char c : str.toCharArray()) {
+            charFrequency.put(c, charFrequency.getOrDefault(c, 0) + 1);
+        }
+        
+        // Find the first character with frequency 1
+        for (char c : str.toCharArray()) {
+            if (charFrequency.get(c) == 1) {
+                return c;
+            }
+        }
+        
+        // If no non-repeating character is found, return a default value
+        return '\0';
+    }
+
+    public static void main(String[] args) {
+        String str = "aabbcdeeff";
+        char result = findFirstNonRepeatingChar(str);
+        
+        if (result != '\0') {
+            System.out.println("The first non-repeating character is: " + result);
+        } else {
+            System.out.println("No non-repeating character found.");
+        }
+    }
+}`}
+      language="java"
+      />
+      <Section id="82"
+      topic="82. Write a program to remove duplicate characters from a string?"
+      content={""}
+      code={`
+import java.util.LinkedHashSet;
+
+public class RemoveDulicateFromString {
+
+    public static void removeDuplicate(String str){
+        LinkedHashSet<Character> lhs = new LinkedHashSet<>();
+        char[] stAr = str.toCharArray();
+        for(char ch : stAr){
+            lhs.add(ch);
+        }
+        StringBuffer sb = new StringBuffer();
+        for(char ch: lhs){
+            sb.append(ch);
+        }
+        System.out.println(sb.toString());
+
+    }
+    public static void main(String[] args) {
+        String str = "Jeebanjyoti Mallik";
+        removeDuplicate(str);
+    }
+}`}
+      language="java"
+      />
 
 
       </div>
