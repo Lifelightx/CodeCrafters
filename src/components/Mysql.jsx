@@ -561,6 +561,41 @@ GROUP BY department_id;"
         code="SELECT * FROM employees ORDER BY salary DESC LIMIT 5;"
         language="SQL"
         />
+        <Section id="querries"
+        topic="59. Write a query to delete all duplicate rows from a table based on a column."
+        content=""
+        code="DELETE FROM employees
+WHERE id NOT IN (
+    SELECT MIN(id) 
+    FROM employees
+    GROUP BY name
+);"
+        language="SQL"
+        />
+        <Section id="querries" 
+        topic="60. Write a query to add a new column to a table."
+        content=""
+        code="ALTER TABLE employees ADD COLUMN department_id INT;"
+        language="SQL"
+        />
+        <Section id="querries"
+        topic="61. Write a query to drop a column from a table."
+        content=""
+        code="ALTER TABLE employees DROP COLUMN department_id;"
+        language="SQL"
+        />
+        <Section id="querries"
+        topic="62. Write a query to rename a column in a table."
+        content=""
+        code="ALTER TABLE employees CHANGE COLUMN old_column_name new_column_name VARCHAR(100);"
+        language="SQL"
+        />
+        <Section id="querries"
+        topic="63. Write a query to truncate a table."
+        content=""
+        code="TRUNCATE TABLE employees;"
+        language="SQL"
+        />
 
       </div>
     </div>

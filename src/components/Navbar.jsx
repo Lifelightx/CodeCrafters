@@ -4,7 +4,22 @@ import { Link, useNavigate } from 'react-router-dom';
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const courses = ['HTML', 'Java', 'JavaScript', 'Node Js', 'Mongo Db', 'My SQL', 'React Js', 'Tailwind Css', 'Bootstrap', 'Git & Github', 'Docker', 'Kubernetes', 'AWS', 'Linux', 'Docker', 'Kubernetes', 'AWS', 'Linux'];
+  const courses = [
+    { name: 'HTML', icon: 'fa-html5' },
+    { name: 'Java', icon: 'fa-java' },
+    { name: 'JavaScript', icon: 'fa-js' },
+    { name: 'Node Js', icon: 'fa-node-js' },
+    { name: 'Mongo Db', icon: '	fas fa-database' },
+    { name: 'My SQL', icon: '	fas fa-database' },
+    { name: 'React Js', icon: 'fa-react' },
+    { name: 'Css', icon: 'fa-css3' },
+    { name: 'Bootstrap', icon: 'fa-bootstrap' },
+    { name: 'Git & Github', icon: 'fa-github' },
+    { name: 'Docker', icon: 'fa-docker' },
+    { name: 'Kubernetes', icon: 'fa-dharmachakra' },
+    { name: 'AWS', icon: 'fa-aws' },
+    { name: 'Linux', icon: 'fa-linux' }
+  ];
 
   const handleLinkClick = (path) => {
     setIsMenuOpen(false);
@@ -23,13 +38,14 @@ function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 px-2 overflow-x-auto scrollbar-hide" style={{maxWidth: 'calc(100vw - 300px)'}}>
               
-              {courses.map((topic, index) => (
+              {courses.map((course, index) => (
                 <Link 
                   key={index} 
-                  to={`/learn/${topic.toLowerCase().replace(' ', '')}`} 
-                  className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium whitespace-nowrap"
+                  to={`/learn/${course.name.toLowerCase().replace(' ', '')}`} 
+                  className="text-blue-600 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium whitespace-nowrap flex items-center gap-1"
                 >
-                  {topic}
+                  <i className={`fab ${course.icon}`}></i>
+                  <span>{course.name}</span>
                 </Link>
               ))}
             </div>
@@ -63,17 +79,18 @@ function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {courses.map((topic, index) => (
+            {courses.map((course, index) => (
               <a
                 key={index}
-                href={`/learn/${topic.toLowerCase().replace(' ', '')}`}
+                href={`/learn/${course.name.toLowerCase().replace(' ', '')}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleLinkClick(`/learn/${topic.toLowerCase().replace(' ', '')}`);
+                  handleLinkClick(`/learn/${course.name.toLowerCase().replace(' ', '')}`);
                 }}
-                className="text-blue-500 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium"
+                className="text-blue-500 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium flex items-center gap-2"
               >
-                {topic}
+                <i className={`fab ${course.icon}`}></i>
+                <span>{course.name}</span>
               </a>
             ))}
           </div>
