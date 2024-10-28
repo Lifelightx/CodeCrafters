@@ -22,6 +22,7 @@ function Navbar() {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 px-2 overflow-x-auto scrollbar-hide" style={{maxWidth: 'calc(100vw - 300px)'}}>
+              
               {courses.map((topic, index) => (
                 <Link 
                   key={index} 
