@@ -741,7 +741,7 @@ public class DetermineStringHasAllUniqueCharacters {
         
     }
     public static void main(String[] args) {
-        String str = "Jebanjyot Mlik";
+        String str = "Jebanjyoti Mallik";
         if(uniqueCharChecker(str)){
             System.out.println("String have all unique character");
         }

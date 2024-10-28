@@ -14,12 +14,12 @@ function Section({ id, topic, content, code = null, language}) {
     <section id={`${id}`} className="mb-8">
       <h2 className="text-xl font-bold mb-4 text-blue-800 font-quicksand">{topic}</h2>
       <p className='font-montserrat text-lg text-gray-900'>
-      {content.split('\n').map((line, index) => (
+      {content?content.split('\n').map((line, index) => (
           <React.Fragment key={index}>
             {line}
             <br />
           </React.Fragment>
-        ))}
+        )):null}
       </p>
       {code ? (
         <div className="relative">
