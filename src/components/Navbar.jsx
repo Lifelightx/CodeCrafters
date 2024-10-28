@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const courses = ['HTML', 'Java', 'JavaScript', 'Node Js', 'Mongo Db', 'My SQL', 'React Js', 'Tailwind Css', 'Bootstrap', 'Git & Github'];
+  const courses = ['HTML', 'Java', 'JavaScript', 'Node Js', 'Mongo Db', 'My SQL', 'React Js', 'Tailwind Css', 'Bootstrap', 'Git & Github', 'Docker', 'Kubernetes', 'AWS', 'Linux', 'Docker', 'Kubernetes', 'AWS', 'Linux'];
 
   const handleLinkClick = (path) => {
     setIsMenuOpen(false);
@@ -21,12 +21,12 @@ function Navbar() {
             </div>
           </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-baseline space-x-4 px-2 overflow-x-auto scrollbar-hide" style={{maxWidth: 'calc(100vw - 300px)'}}>
               {courses.map((topic, index) => (
                 <Link 
                   key={index} 
                   to={`/learn/${topic.toLowerCase().replace(' ', '')}`} 
-                  className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium"
+                  className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium whitespace-nowrap"
                 >
                   {topic}
                 </Link>
@@ -48,6 +48,16 @@ function Navbar() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
 
       {isMenuOpen && (
         <div className="md:hidden">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-
+// import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 function Section({ id, topic, content, code = null, language}) {
   const [copied, setCopied] = useState(false);
 
@@ -23,7 +23,7 @@ function Section({ id, topic, content, code = null, language}) {
       </p>
       {code ? (
         <div className="relative">
-          <SyntaxHighlighter language={`${language}`} className="rounded-lg">
+          <SyntaxHighlighter language={`${language}`}  className="rounded-lg">
             {code}
           </SyntaxHighlighter>
           <button
@@ -34,6 +34,7 @@ function Section({ id, topic, content, code = null, language}) {
           </button>
         </div>
       ) : null}
+      <hr className='my-2'/>
     </section>
   )
 }
