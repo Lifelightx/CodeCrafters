@@ -9,20 +9,20 @@ function Mysql() {
       <div className="w-full md:w-1/4 bg-gray-100 p-4 md:fixed md:h-screen md:overflow-y-auto">
         <h2 className="text-xl font-bold mb-4">SQL Topics</h2>
         <ul className="space-y-2">
-          <Topics name="Introduction"/>
-          <Topics name="DataTypes"/>
-          <Topics name="Keys"/>
-          <Topics name="Keywords"/>
-          <Topics name="Clauses"/>
-          <Topics name="Operators"/>
-          <Topics name="Functions"/>
-          <Topics name="Joins"/>
-          <Topics name="Indexes"/>
-          <Topics name="Transactions"/>
-          <Topics name="Constraints"/>
-          <Topics name="Normalization"/>
-          <Topics name="Triggers"/>
-          <Topics name="Querries"/>
+          <Topics name="Introduction" icon={<i className="fas fa-info-circle text-blue-500"></i>}/>
+          <Topics name="DataTypes" icon={<i className="fas fa-database text-blue-500"></i>}/>
+          <Topics name="Keys" icon={<i className="fas fa-key text-blue-500"></i>}/>
+          <Topics name="Keywords" icon={<i className="fas fa-code text-blue-500"></i>}/>
+          <Topics name="Clauses" icon={<i className="fas fa-file-code text-blue-500"></i>}/>
+          <Topics name="Operators" icon={<i className="fas fa-calculator text-blue-500"></i>}/>
+          <Topics name="Functions" icon={<i className="fas fa-cog text-blue-500"></i>}/>
+          <Topics name="Joins" icon={<i className="fas fa-link text-blue-500"></i>}/>
+          <Topics name="Indexes" icon={<i className="fas fa-list-ol text-blue-500"></i>}/>
+          <Topics name="Transactions" icon={<i className="fas fa-exchange-alt text-blue-500"></i>}/>
+          <Topics name="Constraints" icon={<i className="fas fa-lock text-blue-500"></i>}/>
+          <Topics name="Normalization" icon={<i className="fas fa-table text-blue-500"></i>}/>
+          <Topics name="Triggers" icon={<i className="fas fa-bolt text-blue-500"></i>}/>
+          <Topics name="Querries" icon={<i className="fas fa-search text-blue-500"></i>}/>
         </ul>
       </div>
 
@@ -596,6 +596,7 @@ WHERE id NOT IN (
         code="TRUNCATE TABLE employees;"
         language="SQL"
         />
+        
 
       </div>
     </div>

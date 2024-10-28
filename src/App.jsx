@@ -9,6 +9,14 @@ import Coding from "./Pages/Coding"
 import JavaScript from "./components/JavaScript"
 import Node from "./components/Node"
 import Mysql from "./components/Mysql"
+import Courses from "./Pages/Courses"
+import CourseWelcome from "./Pages/CourseWelcome"
+import ReactCourse from "./Pages/ReactCourse"
+import JavaScriptCourse from "./Pages/JavaScriptCourse"
+import CssCourse from "./Pages/CssCourse"
+import MySqlCourse from "./Pages/MySqlCourse"
+import JavaCourse from "./Pages/JavaCourse"
+import MongoDbCourse from "./Pages/MongoDbCourse"
 // Import other components as needed
 
 function App() {
@@ -25,7 +33,15 @@ function App() {
             <Route path="node" element={<Node />} />
             <Route path="mongoDb" element={<MongoDb />} />
             <Route path="mysql" element={<Mysql />} />
-            <Route path="coding" element={<Coding />} />
+          </Route>
+          <Route path="/courses" element={<Courses />} >
+            <Route path="" element={<CourseWelcome />} />
+            <Route path="reactjs" element={<ReactCourse />} />
+            <Route path="java" element={<JavaCourse />} />
+            <Route path="mongodb" element={<MongoDbCourse />} />
+            <Route path="javascript" element={<JavaScriptCourse />} />
+            <Route path="css" element={<CssCourse />} />
+            <Route path="mysql" element={<MySqlCourse />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CodeCrafter from '../assets/CodeCrafter.jpg'
-function Navbar() {
+
+function CourseNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const courses = [
-    { name: 'HTML', icon: 'fa-html5', color: 'text-orange-600' },
-    { name: 'Java', icon: 'fa-java', color: 'text-red-600' },
-    { name: 'JavaScript', icon: 'fa-js', color: 'text-yellow-500' },
-    { name: 'Node Js', icon: 'fa-node-js', color: 'text-green-600' },
-    { name: 'Mongo Db', icon: 'fas fa-database', color: 'text-green-700' },
-    { name: 'My SQL', icon: 'fas fa-database', color: 'text-blue-800' },
-    { name: 'React Js', icon: 'fa-react', color: 'text-cyan-500' },
-    { name: 'Css', icon: 'fa-css3', color: 'text-blue-600' },
-    { name: 'Bootstrap', icon: 'fa-bootstrap', color: 'text-purple-600' },
-    { name: 'Git & Github', icon: 'fa-github', color: 'text-gray-800' },
-    
+    { name: 'HTML', icon: 'fa-html5' },
+    { name: 'Java', icon: 'fa-java' },
+    { name: 'JavaScript', icon: 'fa-js' },
+    { name: 'Node Js', icon: 'fa-node-js' },
+    { name: 'Mongo Db', icon: 'fas fa-database' }, // Fixed extra spaces
+    { name: 'My SQL', icon: 'fas fa-database' }, // Fixed extra spaces
+    { name: 'React Js', icon: 'fa-react' },
+    { name: 'Css', icon: 'fa-css3' },
+    { name: 'Bootstrap', icon: 'fa-bootstrap' },
+    { name: 'Git & Github', icon: 'fa-github' },
+    { name: 'Docker', icon: 'fa-docker' },
+    { name: 'Kubernetes', icon: 'fa-dharmachakra' },
+    { name: 'AWS', icon: 'fa-aws' },
+    { name: 'Linux', icon: 'fa-linux' }
   ];
 
   const handleLinkClick = (path) => {
@@ -29,19 +33,20 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img src={CodeCrafter} alt="CodeCrafter" className='w-16 h-16 ' />
+              <Link to="/">
+                <img src={CodeCrafter} alt="CodeCrafter" className="w-16 h-16" />
+              </Link>
             </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 overflow-x-auto scrollbar-hide" style={{maxWidth: 'calc(100vw - 300px)'}}>
-              
               {courses.map((course, index) => (
                 <Link 
                   key={index} 
-                  to={`/learn/${course.name.toLowerCase().replace(' ', '')}`} 
+                  to={`/courses/${course.name.toLowerCase().replace(/\s+/g, '')}`}
                   className="text-blue-600 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium whitespace-nowrap flex items-center gap-1"
                 >
-                  <i className={`fab ${course.icon} ${course.color}`}></i>
+                  <i className={`fab ${course.icon}`}></i>
                   <span>{course.name}</span>
                 </Link>
               ))}
@@ -77,18 +82,15 @@ function Navbar() {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {courses.map((course, index) => (
-              <a
+              <Link
                 key={index}
-                href={`/learn/${course.name.toLowerCase().replace(' ', '')}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(`/learn/${course.name.toLowerCase().replace(' ', '')}`);
-                }}
+                to={`/courses/${course.name.toLowerCase().replace(/\s+/g, '')}`}
+                onClick={() => setIsMenuOpen(false)}
                 className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-base font-medium flex items-center gap-2"
               >
-                <i className={`fab ${course.icon} ${course.color}`}></i>
+                <i className={`fab ${course.icon}`}></i>
                 <span>{course.name}</span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -97,4 +99,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default CourseNavbar;

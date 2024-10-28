@@ -1,11 +1,12 @@
 import React from 'react'
 
-function Node() {
+function CssCourse() {
   return (
     <div>
-      This is Node Js
+      Css Course
     </div>
   )
 }
 
-export default Node
+export default CssCourse
+
