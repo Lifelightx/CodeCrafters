@@ -1,6 +1,8 @@
 import React from 'react'
 import Topics from './Topics'
 import Section from './Section'
+import Footer from './Footer'
+import Support from './Support'
 
 function Mysql() {
   return (
@@ -25,7 +27,7 @@ function Mysql() {
           <Topics name="Querries" icon={<i className="fas fa-search text-blue-500"></i>}/>
         </ul>
       </div>
-
+      <Support/>
       {/* Main content */}
       <div className="w-full md:w-3/4 p-4 md:ml-[25%] overflow-y-auto">
         <h1 className="text-3xl font-bold mb-6">Learn SQL</h1>
@@ -598,6 +600,7 @@ WHERE id NOT IN (
         />
         
 
+      <Footer/>
       </div>
     </div>
   )

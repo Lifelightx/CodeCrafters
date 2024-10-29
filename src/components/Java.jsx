@@ -1,12 +1,14 @@
 import React from 'react'
 import Topics from './Topics'
 import Section from './Section'
-
+import Footer from './Footer'
+import Support from './Support'
 function Java() {
   return (
     <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
       <div className="w-full md:w-1/4 bg-gray-100 p-4 md:fixed md:h-screen md:overflow-y-auto">
+        
         <h2 className="text-xl font-bold mb-4">Java Topics</h2>
         <ul className="space-y-0">
           <Topics name="Introduction" icon={<i className="fas fa-book text-blue-500"></i>} />
@@ -18,7 +20,7 @@ function Java() {
           <Topics name="DSA" icon={<i className="fas fa-sitemap text-blue-500"></i>} />
         </ul>
       </div>
-
+      <Support />
       {/* Main content */}
       <div className="w-full md:w-3/4 p-5 md:ml-[25%] overflow-y-auto">
         <h1 className="text-3xl font-bold mb-6 font-quicksand text-blue-600">Learn Java</h1>
@@ -843,8 +845,426 @@ public class RemoveDulicateFromString {
 }`}
       language="java"
       />
+      <Section id="83"
+        topic="83. Write a program to remove white spaces from a String."
+        code={`
+public class removeWhiteSpaces {
+    public static String removeSpace(String str){
+        return str.replaceAll("\\s+", "");
+    }
+    public static void removeWhiteSpace(String str){
+        String newStr = "";
+        for(int i =0; i<str.length(); i++){
+            if(str.charAt(i) != ' '){
+                newStr += str.charAt(i);
+            }
+        }
+        System.out.println(newStr);
+    }
+    public static void main(String[] args) {
+        String strWithoutspace = removeSpace("Jeebanjyoti Mallik");
+        System.out.println(strWithoutspace);
+        removeWhiteSpace("Jee ba n j yoti ");
+    }
+}
+`}
+        language="java"
+      />
+      <Section  id="84"
+        topic="84. Write a program to convert String to integer and vice versa?"
+        content={""}
+        code={`
+public class StringToIntegerOrViceVersa {
+    public static void strToInt(String str){
+        int Number = Integer.parseInt(str);
+        System.out.println("Number: "+ Number);
+    }
+    public static void intToString(int in){
+        String str = String.valueOf(in);
+        System.out.println(str);
+    }
+    public static void main(String[] args) {
+        strToInt("1235");
+        intToString(1256);
+    }
+}
+`}
+        language="java"
+      />
+      <Section id="85"
+        topic="85. Write a program for Bubble Sort?"
+        content={""}
+        code={`
+public class BubbleSort {
+    public static void bubbleSort(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[i]>arr[j]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for(int i : arr){
+            System.out.println(i);
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {3, 8, 1, 4, 0, 34, 5};
+        bubbleSort(arr);
+    }
+}
+`}
+        language="java"
+      />
+      <Section id="86"
+        topic="86. Write a program for Selection Sort?"
+        content={""}
+        code={`
+public class SelectionSort {
+    public static void selectionSort(int[] arr) {
+        for(int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+            
+            // Find minimum element in unsorted array
+            for(int j = i + 1; j < arr.length; j++) {
+                if(arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            
+            // Swap found minimum element with first element
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i]; 
+            arr[i] = temp;
+        }
+        
+        // Print sorted array
+        for(int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
 
+    public static void main(String[] args) {
+        int[] arr = {64, 25, 12, 22, 11};
+        selectionSort(arr);
+    }
+}`}
+        language="java"
+      />
+      <Section id="87"
+      topic="87. Write a program for Insertion Sort?"
+      content={""}
+      code={`
+public class InsertionSort {
+    public static void insertionSort(int[] arr) {
+        for(int i = 1; i < arr.length; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            
+            // Move elements of arr[0..i-1] that are greater than key
+            // to one position ahead of their current position
+            while(j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+        
+        // Print sorted array
+        for(int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
 
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6};
+        insertionSort(arr);
+    }
+}`}
+      language="java"
+      />
+      <Section id="88"
+      topic="88. Write a program for Quick Sort?"
+      content={""}
+      code={`
+public class QuickSort {
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            // Find the partition index
+            int pi = partition(arr, low, high);
+            
+            // Recursively sort elements before and after partition
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+    
+    private static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1); // Index of smaller element
+        
+        for (int j = low; j < high; j++) {
+            // If current element is smaller than or equal to pivot
+            if (arr[j] <= pivot) {
+                i++;
+                
+                // Swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        
+        // Swap arr[i+1] and arr[high] (or pivot)
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        
+        return i + 1;
+    }
+    
+    // Print array method
+    private static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 7, 8, 9, 1, 5};
+        quickSort(arr, 0, arr.length - 1);
+        printArray(arr);
+    }
+}`}
+      language="java"
+      />
+      <Section id="89"
+      topic="89. Write a program to count Occurrence of each element in an array?"
+      content={""}
+      code={`
+import java.util.*;
+public class CountEachOccarance {
+    public static void countOccarance(int[] arr){
+        Map<Integer, Integer> hmp = new HashMap<>();
+        for(int i : arr){
+            hmp.put(i, hmp.getOrDefault(i, 0)+1);
+        }
+        for(Map.Entry<Integer, Integer> m : hmp.entrySet()){
+            System.out.println(m.getKey() + " : "+ m.getValue());
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 1, 2,5,5,3,3,3,1,2,2,8};
+        countOccarance(arr);
+    }
+}
+`}
+      language="java"
+      />
+      <Section id="90"
+      topic="90. Write a program to find the second largest element in an array?"
+      content={""}
+      code={`
+public class SecondLargest {
+    public static int findSecondLargest(int[] arr) {
+        // Edge cases
+        if (arr == null || arr.length < 2) {
+            throw new IllegalArgumentException("Array should have at least 2 elements");
+        }
+        
+        // Initialize first and second largest
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        
+        // Find first and second largest
+        for (int num : arr) {
+            if (num > first) {
+                second = first;
+                first = num;
+            } else if (num > second && num != first) {
+                second = num;
+            }
+        }
+        
+        // Check if second largest exists
+        if (second == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("No second largest element exists");
+        }
+        
+        return second;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {12, 35, 1, 10, 34, 1};
+        try {
+            int secondLargest = findSecondLargest(arr);
+            System.out.println("Second largest element is: " + secondLargest);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}`}
+      language="java"
+      />
+      <Section id="91"
+      topic="91. Write a program to merge two arrays and sort the merged array?"
+      content={""}
+      code={`
+import java.util.Arrays;
+
+public class MergeTwoArrays {
+    public static int[] mergeTwoArray(int[] arr1, int[] arr2){
+        int arr1len = arr1.length;
+        int arr2len = arr2.length;
+
+        int[] newArr = new int[arr1len+arr2len];
+
+        for(int i=0; i<arr1len; i++){
+            newArr[i] = arr1[i];
+        }
+        for(int i= 0; i<arr2len;i++){
+            newArr[arr1len+i] = arr2[i];
+        }
+        
+        Arrays.sort(newArr);
+
+       return newArr;
+
+    }
+    public static void main(String[] args) {
+        int[] arr1 = {2, 4, 8};
+        int[] arr2 = {1,3,5};
+        int[] mergedArray = mergeTwoArray(arr1, arr2);
+
+        for(int k : mergedArray){
+            System.out.println(k);
+        }
+    }
+    
+}
+`}
+      language="java"
+      />
+      <Section id="92"
+      topic="92. Write a program to find the sum of all elements in an array?"
+      content={""}
+      code={`
+public class ArraySum {
+    public static int findSum(int[] arr) {
+        int sum = 0;
+        for(int num : arr) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        int sum = findSum(numbers);
+        System.out.println("Sum of array elements: " + sum);
+    }
+}`}
+      language="java"
+      />
+      <Section id="93"
+        topic="93. Write a program to reverse an array?"
+        content={""}
+        code={`
+public class ReverseAnArray {
+    public static void reverseArray(int[] arr){
+        int start = 0; 
+        int end = arr.length-1; 
+        while (start < end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;            
+        }
+        
+    }
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 89, 1, 3, 9};
+        reverseArray(arr);
+        for(int i: arr){
+            System.out.println(i);
+        }
+    }
+}
+`}
+        language="java"
+      />
+      <Section id="94"
+      topic="94. Write a program to find the maximum and minimum element in an array?"
+      content={""}
+      code={`
+public class MinMaxArray {
+    public static void findMinMax(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            System.out.println("Array is empty");
+            return;
+        }
+        
+        int min = arr[0];
+        int max = arr[0];
+        
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[i] < min) {
+                min = arr[i];
+            }
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        
+        System.out.println("Minimum element: " + min);
+        System.out.println("Maximum element: " + max);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {5, 2, 9, 1, 7, 6, 3};
+        findMinMax(numbers);
+    }
+}`}
+      language="java"
+      />
+      <Section id="95"
+        topic="95. Sort an array in descending order?"
+        content={""}
+        code={`package DSA_ON_ARRAY;
+
+import java.util.Arrays;
+
+public class SortAnArrayInDescendingOrder {
+    public static int[] sortArrayInReverse(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            for(int j = i+1; j< arr.length; j++){
+                if(arr[j]>arr[i]){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        Arrays.sort(arr);
+        return arr;
+    }
+    public static void main(String[] args) {
+        int[] arr = {1, 9, 2, 4, 5};
+        int[] rarr = sortArrayInReverse(arr);
+        for(int i :rarr){
+            System.out.println(i);
+        }
+    }
+}
+`}
+        language="java"
+      />
+
+      <Footer />
       </div>
     </div>
   )
