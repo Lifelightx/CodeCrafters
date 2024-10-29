@@ -17,8 +17,9 @@ import CssCourse from "./Pages/CssCourse"
 import MySqlCourse from "./Pages/MySqlCourse"
 import JavaCourse from "./Pages/JavaCourse"
 import MongoDbCourse from "./Pages/MongoDbCourse"
-import CompilerHTML from "./components/CompilerHTML"
+import CompilerHTML from "./components/Compilers/CompilerHTML"
 // Import other components as needed
+import JavaScriptRunner from "./components/Compilers/JavaScriptRunner"
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="css" element={<CssCourse />} />
             <Route path="mysql" element={<MySqlCourse />} />
             <Route path="compilerHTML" element={<CompilerHTML />} />
+            <Route path="compilerJavaScript" element={<JavaScriptRunner  />} />
           </Route>
         </Routes>
       </BrowserRouter>

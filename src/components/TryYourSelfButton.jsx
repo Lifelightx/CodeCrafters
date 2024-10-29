@@ -1,10 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-function TryYourSelfButton({path}) {
+function TryYourSelfButton({ path, code }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/courses/${path}`, { state: { initialCode: code } });
+  };
+
   return (
     <div>
-      <button className='bg-blue-500 text-white px-4 py-2 rounded-md'><Link to={`/courses/${path}`}>Try it Yourself</Link></button>
+      <button 
+        onClick={handleClick} 
+        className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors duration-200'>
+        Try it Yourself
+      </button>
     </div>
   )
 }
