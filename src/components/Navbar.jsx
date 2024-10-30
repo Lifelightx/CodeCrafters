@@ -42,7 +42,7 @@ function Navbar() {
                   className="text-blue-600 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium whitespace-nowrap flex items-center gap-1"
                 >
                   <i className={`fab ${course.icon} ${course.color}`}></i>
-                  <span>{course.name}</span>
+                  <span className='font-montserrat'>{course.name}</span>
                 </Link>
               ))}
             </div>
@@ -87,7 +87,7 @@ function Navbar() {
                 className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-base font-medium flex items-center gap-2"
               >
                 <i className={`fab ${course.icon} ${course.color}`}></i>
-                <span>{course.name}</span>
+                <span className='font-montserrat'>{course.name}</span>
               </a>
             ))}
           </div>
