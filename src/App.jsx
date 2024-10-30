@@ -20,7 +20,7 @@ import MongoDbCourse from "./Pages/MongoDbCourse"
 import CompilerHTML from "./components/Compilers/CompilerHTML"
 // Import other components as needed
 import JavaScriptRunner from "./components/Compilers/JavaScriptRunner"
-
+import Git from "./components/Git"
 function App() {
   return (
     <>
@@ -32,9 +32,10 @@ function App() {
             <Route path="html" element={<Html />} />
             <Route path="java" element={<Java />} />
             <Route path="javascript" element={<JavaScript />} />
-            <Route path="node" element={<Node />} />
-            <Route path="mongoDb" element={<MongoDb />} />
+            <Route path="nodejs" element={<Node />} />
+            <Route path="mongodb" element={<MongoDb />} />
             <Route path="mysql" element={<Mysql />} />
+            <Route path="git" element={<Git />} />
           </Route>
           <Route path="/courses" element={<Courses />} >
             <Route path="" element={<CourseWelcome />} />

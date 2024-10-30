@@ -14,7 +14,7 @@ function Navbar() {
     { name: 'React Js', icon: 'fa-react', color: 'text-cyan-500' },
     { name: 'Css', icon: 'fa-css3', color: 'text-blue-600' },
     { name: 'Bootstrap', icon: 'fa-bootstrap', color: 'text-purple-600' },
-    { name: 'Git & Github', icon: 'fa-github', color: 'text-gray-800' },
+    { name: 'Git', icon: 'fa-github', color: 'text-gray-800' },
     
   ];
 

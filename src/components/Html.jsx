@@ -1,7 +1,8 @@
 import React from 'react'
 import Topics from './Topics'
 import Section from './Section'
-
+import Footer from './Footer'
+import Support from './Support'
 function Html() {
   return (
     <div className="flex flex-col md:flex-row">
@@ -13,6 +14,7 @@ function Html() {
           
         </ul>
       </div>
+      <Support/>
 
       {/* Main content */}
       <div className="w-full md:w-3/4 p-4 md:ml-[25%] overflow-y-auto">
@@ -162,6 +164,7 @@ function Html() {
           topic="30. What is the difference between preload and prefetch?"
           content="Preload is a declarative fetch for resources needed for current navigation. Prefetch suggests resources might be needed for future navigation. Both optimize resource loading but serve different purposes."
         />
+        <Footer/>
       </div>
     </div>
   )
