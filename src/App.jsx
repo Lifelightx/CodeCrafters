@@ -21,6 +21,7 @@ import CompilerHTML from "./components/Compilers/CompilerHTML"
 // Import other components as needed
 import JavaScriptRunner from "./components/Compilers/JavaScriptRunner"
 import Git from "./components/Git"
+import React from "./components/ReacPage"
 function App() {
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
             <Route path="nodejs" element={<Node />} />
             <Route path="mongodb" element={<MongoDb />} />
             <Route path="mysql" element={<Mysql />} />
+            <Route path="reactjs" element={<React />} />
             <Route path="git" element={<Git />} />
           </Route>
           <Route path="/courses" element={<Courses />} >
