@@ -12,7 +12,7 @@ function TryYourSelfButton({ path, code }) {
     <div>
       <button 
         onClick={handleClick} 
-        className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors duration-200'>
+        className='bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 mb-1 rounded-md transition-colors duration-200'>
         Try it Yourself
       </button>
     </div>

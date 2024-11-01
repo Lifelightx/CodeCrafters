@@ -11,7 +11,7 @@ function Section({ id, topic, content, code = null, language}) {
   };
 
   return (
-    <section id={`${id}`} className="mb-8">
+    <section id={`${id.toLowerCase()}`} className="mb-4">
       <h2 className="text-xl font-bold mb-4 text-blue-800 font-quicksand">{topic}</h2>
       <p className='font-montserrat text-lg text-gray-900'>
       {content?content.split('\n').map((line, index) => (

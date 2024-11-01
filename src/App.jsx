@@ -24,6 +24,7 @@ import Git from "./components/Git"
 import ReactPage from "./components/ReacPage"
 import CSS from "./components/CSS"
 import BootStrap from "./components/BootStrap"
+import HtmlCourse from "./Pages/HtmlCourse"
 function App() {
   return (
     <>
@@ -45,6 +46,7 @@ function App() {
           </Route>
           <Route path="/courses" element={<Courses />} >
             <Route path="" element={<CourseWelcome />} />
+            <Route path="html" element={<HtmlCourse />} />
             <Route path="reactjs" element={<ReactCourse />} />
             <Route path="java" element={<JavaCourse />} />
             <Route path="mongodb" element={<MongoDbCourse />} />

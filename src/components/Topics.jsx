@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Topics({ name, icon }) {
-    const id = name.toLowerCase();
+    const id = name.toLowerCase().replace(" ", "");
     return (
         <li>
             <button onClick={() => { 

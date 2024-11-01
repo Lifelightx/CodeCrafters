@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Editor, { loader } from '@monaco-editor/react';
+import { useLocation } from 'react-router-dom';
 
 // Configure Monaco Editor loader
 loader.config({ paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.33.0/min/vs' } });
 
 function CompilerHTML() {
-  const [code, setCode] = useState(`<!DOCTYPE html>
+  const location = useLocation();
+  const initialCode = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,12 +15,14 @@ function CompilerHTML() {
   <title>Live HTML Editor</title>
 </head>
 <body>
+  ${location.state?.initialCode ? location.state.initialCode : `
   <h1>Hello, World!</h1>
-  <p>This is a live preview of HTML, CSS, and JavaScript.</p>
+  <p>This is a live preview of HTML, CSS, and JavaScript.</p>`}
   </body>
 </html>
-`);
+`;
 
+  const [code, setCode] = useState(initialCode);
   const iframeRef = useRef(null);
 
   const generatePreview = () => {

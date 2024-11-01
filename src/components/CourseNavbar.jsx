@@ -6,20 +6,20 @@ function CourseNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const courses = [
-    { name: 'HTML', icon: 'fa-html5' },
-    { name: 'Java', icon: 'fa-java' },
-    { name: 'JavaScript', icon: 'fa-js' },
-    { name: 'Node Js', icon: 'fa-node-js' },
-    { name: 'Mongo Db', icon: 'fas fa-database' }, // Fixed extra spaces
-    { name: 'My SQL', icon: 'fas fa-database' }, // Fixed extra spaces
-    { name: 'React Js', icon: 'fa-react' },
-    { name: 'Css', icon: 'fa-css3' },
-    { name: 'Bootstrap', icon: 'fa-bootstrap' },
-    { name: 'Git & Github', icon: 'fa-github' },
-    { name: 'Docker', icon: 'fa-docker' },
-    { name: 'Kubernetes', icon: 'fa-dharmachakra' },
-    { name: 'AWS', icon: 'fa-aws' },
-    { name: 'Linux', icon: 'fa-linux' }
+    { name: 'HTML', icon: 'fa-html5', color: 'text-orange-600' },
+    { name: 'Java', icon: 'fa-java', color: 'text-red-600' },
+    { name: 'JavaScript', icon: 'fa-js', color: 'text-yellow-500' },
+    { name: 'Node.js', icon: 'fa-node-js', color: 'text-green-600' },
+    { name: 'MongoDB', icon: 'fas fa-database', color: 'text-green-500' },
+    { name: 'MySQL', icon: 'fas fa-database', color: 'text-blue-500' },
+    { name: 'React', icon: 'fa-react', color: 'text-cyan-400' },
+    { name: 'CSS', icon: 'fa-css3', color: 'text-blue-600' },
+    { name: 'Bootstrap', icon: 'fa-bootstrap', color: 'text-purple-600' },
+    { name: 'Git & GitHub', icon: 'fa-github', color: 'text-gray-800' },
+    { name: 'Docker', icon: 'fa-docker', color: 'text-blue-400' },
+    { name: 'Kubernetes', icon: 'fa-dharmachakra', color: 'text-blue-600' },
+    { name: 'AWS', icon: 'fa-aws', color: 'text-orange-500' },
+    { name: 'Linux', icon: 'fa-linux', color: 'text-yellow-600' }
   ];
 
   const handleLinkClick = (path) => {
@@ -44,10 +44,10 @@ function CourseNavbar() {
                 <Link 
                   key={index} 
                   to={`/courses/${course.name.toLowerCase().replace(/\s+/g, '')}`}
-                  className="text-blue-600 hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium whitespace-nowrap flex items-center gap-1"
+                  className="hover:text-orange-500 px-3 py-2 rounded-md text-md font-medium whitespace-nowrap flex items-center gap-1"
                 >
-                  <i className={`fab ${course.icon}`}></i>
-                  <span>{course.name}</span>
+                  <i className={`fab ${course.icon} ${course.color}`}></i>
+                  <span className="text-blue-600">{course.name}</span>
                 </Link>
               ))}
             </div>
@@ -86,10 +86,10 @@ function CourseNavbar() {
                 key={index}
                 to={`/courses/${course.name.toLowerCase().replace(/\s+/g, '')}`}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-blue-500 hover:text-orange-500 px-3 py-2 rounded-md text-base font-medium flex items-center gap-2"
+                className="hover:text-orange-500 px-3 py-2 rounded-md text-base font-medium flex items-center gap-2"
               >
-                <i className={`fab ${course.icon}`}></i>
-                <span>{course.name}</span>
+                <i className={`fab ${course.icon} ${course.color}`}></i>
+                <span className="text-blue-600">{course.name}</span>
               </Link>
             ))}
           </div>
