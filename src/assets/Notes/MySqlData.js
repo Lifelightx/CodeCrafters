@@ -473,5 +473,54 @@ WHERE id NOT IN
         code:`ALTER TABLE table_name DROP COLUMN column_name;`,
         language: "sql",
     },
+    {
+        id: "71",
+        topic: "71. Write a query to insert a single row into a table.",
+        code: `INSERT INTO table_name (column1, column2, column3) 
+VALUES (value1, value2, value3);`,
+        language: "sql",
+    },
+    {
+        id: "72", 
+        topic: "72. Write a query to insert multiple rows into a table.",
+        code: `INSERT INTO table_name (column1, column2, column3)
+VALUES 
+    (value1, value2, value3),
+    (value4, value5, value6),
+    (value7, value8, value9);`,
+        language: "sql",
+    },
+    {
+        id: "73",
+        topic: "73. Write a query to insert data into specific columns of a table.",
+        code: `INSERT INTO table_name (column1, column3) 
+VALUES (value1, value3);`,
+        language: "sql",
+    },
+    {
+        id: "74",
+        topic: "74. Write a query to update a single column for all rows.",
+        code: `UPDATE table_name 
+SET column1 = new_value;`,
+        language: "sql",
+    },
+    {
+        id: "75",
+        topic: "75. Write a query to update multiple columns with a condition.",
+        code: `UPDATE table_name 
+SET 
+    column1 = new_value1,
+    column2 = new_value2 
+WHERE condition;`,
+        language: "sql",
+    },
+    {
+        id: "76",
+        topic: "76. Write a query to update data using data from another table.",
+        code: `UPDATE table1 t1
+JOIN table2 t2 ON t1.id = t2.id
+SET t1.column1 = t2.column1;`,
+        language: "sql",
+    }
 
 ]
