@@ -5,9 +5,10 @@ import Footer from './Footer'
 import Support from './Support'
 import JavaScriptData from '../assets/Notes/JavaScriptData'
 
-const sectionsData = JavaScriptData;
+const jsData = JavaScriptData;
 
-function JavaScript() {
+function JavaScriptLearn() {
+  console.log('jsData', jsData)
   return (
     <div className="flex flex-col md:flex-row">
       {/* Sidebar */}
@@ -22,21 +23,22 @@ function JavaScript() {
       {/* Main content */}
       <div className="w-full md:w-3/4 p-4 md:ml-[25%] overflow-y-auto">
         <h1 className="text-3xl font-bold mb-6">Learn JavaScript</h1>
-        {sectionsData.map((section, index) => (
-          <Section
-            key={index}
-            id={section.id}
-            topic={section.topic}
-            content={section.content}
-            code={section.code}
-            language={section.language}
-          />
-        ))}
-       
+        {jsData.map((data, index)=>{
+          return (
+            <Section
+              key={index}
+              topic={data.topic}
+              content={data.content}
+              code={data.code}
+              language={data.language}
+            />
+          )
+        })}
+
         <Footer/>
       </div>
     </div>
   )
 }
 
-export default JavaScript
+export default JavaScriptLearn

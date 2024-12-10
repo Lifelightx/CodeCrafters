@@ -896,8 +896,5 @@ export default [
       code:`localStorage.setItem('name', 'John');
   sessionStorage.setItem('name', 'John');`,
       language:"javascript"
-    }
-  
-    
-    
-  ];
+    }    
+];
